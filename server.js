@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require("path");
+// const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 8080;
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-(require("./routes/htmlroutes.js"))(app);
-(require("./routes/api.js"))(app);
+(require("./controller/htmlroutes.js"))(app);
+(require("./controller/api.js"))(app);
 
 
 app.listen(PORT, () => {
