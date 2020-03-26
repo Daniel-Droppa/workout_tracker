@@ -12,7 +12,7 @@ app.use(express.static("public"));
 
 const PORT = process.env.PORT || 8080;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true, useFindAndModify: false });
 
 (require("./controller/htmlroutes.js"))(app);
 (require("./controller/api.js"))(app);
